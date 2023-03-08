@@ -38,6 +38,11 @@ app.get('/gsap-test', (req: Request, res: Response) => {
 				z: position.z,
 			});
 		},
+		onComplete: () => {
+			position.x = 0;
+			position.y = 0;
+			position.z = 0;
+		}
 	});
 
 	res.status(200).send({message: 'position data send start'});
